@@ -2,9 +2,13 @@ import React, { useContext, useState } from "react"
 import CardSelect from "../../Components/CardSelect";
 import Layout from "../../Components/Layout";
 import { PaymentContext } from "../../Context";
+import Button from '@mui/material/Button';
+import { useNavigate } from "react-router-dom";
 
 const PaymentMethodPage = () => {
-    const {selected, setSelected, payments} = useContext(PaymentContext)
+    const {selected, setSelected, payments} = useContext(PaymentContext);
+    const navigate = useNavigate();
+
     return (
         <Layout title="João, como você quer pagar?">
             <div className="relative">
@@ -33,6 +37,9 @@ const PaymentMethodPage = () => {
                     }
                 })}
             </div>
+            {
+                selected != null && <Button onClick={() => navigate('/pix')} variant="contained" color="secondary"><span className="text-white text-lg font-normal normal-case">Continue</span></Button>
+            }
         </Layout>
     )
 }
