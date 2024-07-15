@@ -1,6 +1,6 @@
 import Router from './Routes'
 import { ThemeProvider } from '@mui/material/styles'
-import { ColorTheme } from './GlobalStyle/MuiTheme'
+import { ColorTheme } from './themes/index.theme'
 
 function App() {
 
