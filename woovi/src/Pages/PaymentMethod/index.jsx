@@ -17,7 +17,7 @@ const PaymentMethodPage = () => {
                     <p className="text-gray-400 font-extrabold text-md text-center">Pix</p>
                 </div>
             </div>
-            <div className="relative">
+            <div className="relative w-full">
                 <div className="absolute -top-3 px-4 bg-gray-100 rounded-full left-5">
                     <p className="text-gray-400 font-extrabold text-md text-center">Pix Parcelado</p>
                 </div>
@@ -38,7 +38,7 @@ const PaymentMethodPage = () => {
                 })}
             </div>
             {
-                selected != null && <Button className="w-full" onClick={() => navigate('/pix')} variant="contained" color="secondary"><span className="text-white text-lg font-normal normal-case">Continue</span></Button>
+                selected != null && <Button className="w-full" onClick={() => navigate('/pix')} variant="contained" color="secondary"><span className="text-white text-lg font-normal">Continue</span></Button>
             }
         </Layout>
     )
