@@ -24,7 +24,7 @@ export default {
       sm: '14px',
     },
     fontFamily: {
-      default: ['Poppins', 'sans-serif'],
+      default: ['Nunito', 'sans-serif'],
     },
   },
   },
