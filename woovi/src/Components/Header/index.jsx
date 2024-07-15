@@ -3,10 +3,10 @@ import Logo from "../../assets/logo.svg"
 
 const Header = ({title = "Título"}) => {
     return (
-        <div className="w-full h-fit flex items-center flex-col gap-10">
+        <header className="w-full h-fit flex items-center flex-col gap-10">
             <img src={Logo} alt="logo"  className="h-9"/>
             <h1 className="text-center text-400 text-lg font-extrabold">{title}</h1>
-        </div>
+        </header>
     )
 }
 
