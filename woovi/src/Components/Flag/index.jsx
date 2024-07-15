@@ -7,9 +7,9 @@ const Flag = ({text = "texto", boldText = "texto em destaque"}) => {
                 <span className="font-extrabold text-ellipsis">{boldText}</span>
                 <span className="font-normal overflow-hidden text-ellipsis ">{text}</span>
             </p>
-            <svg className=" absolute top-0 right-0 w-6 h-10">
+            <svg className=" absolute top-0 -right-1 w-6 h-10">
                 <polygon 
-                    points="4 18,25 33,25 4"  
+                    points="4 18,25 37,21 4"  
                     strokeLinecap="round" 
                     strokeLinejoin="round"
                     stroke="white" 

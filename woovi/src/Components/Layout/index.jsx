@@ -4,7 +4,7 @@ import Footer from "../Footer";
 
 const Layout = ({children, title="Título"}) => {
     return (
-        <div className="px-4 py-9 w-full flex flex-col gap-8">
+        <div className="px-4 py-9 w-full flex flex-col items-center gap-8">
             <Header title={title} />
             {children}
             <Footer />

@@ -54,7 +54,7 @@ const payments = [
 ]
 
 export const PaymentProvider = ({ children }) => {
-    const [selected, setSelected] = useState(null);
+    const [selected, setSelected] = useState(2);
 
     return (
         <PaymentContext.Provider
