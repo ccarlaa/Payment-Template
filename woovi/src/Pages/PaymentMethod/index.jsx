@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 import { PaymentContext } from "../../Context"
 import CardSelect from "../../Components/CardSelect";
 
-export default function PaymentMethodPage() {
+const PaymentMethodPage = () => {
     const { counter, setCounter} = useContext(PaymentContext)
     return (
         <div className="">
@@ -15,3 +15,5 @@ export default function PaymentMethodPage() {
         </div>
     )
 }
+
+export default PaymentMethodPage

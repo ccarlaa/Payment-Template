@@ -4,7 +4,7 @@ import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import Flag from "../Flag";
 
-const CardSelect = ({variant = 'primary'}) => {
+const CardSelect = ({variant = 'primary', borderTopRounded = false, borderBottomRounded = false}) => {
     console.log(variant)
     const [selected, setSelect] = useState(false);
     
@@ -28,7 +28,7 @@ const CardSelect = ({variant = 'primary'}) => {
     }
 
     return (
-        <div onClick={() => setSelect(!selected)} className={`w-full h-fit flex flex-col gap-2 rounded-lg p-5 ${selected ? "border-2 border-primary-200 bg-primary-100" : "border border-gray-100"}`}>
+        <div onClick={() => setSelect(!selected)} className={`w-full h-fit flex flex-col gap-2 p-5 ${selected ? "border-2 border-primary-200 bg-primary-100" : "border border-gray-100"} ${borderTopRounded && 'rounded-t-xl'} ${borderBottomRounded && 'rounded-b-xl'}`}>
             <div className="flex justify-between items-start">
                 <div className="flex flex-col gap-1">
                     <h1 className="w-full gap-1 flex text-lg text-gray-400">

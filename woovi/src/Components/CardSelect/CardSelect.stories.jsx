@@ -10,6 +10,16 @@ export default {
       },
       options: ['primary', 'secondary', 'tertiary'],
     },
+    borderTopRounded: {
+      control: {
+        type: 'boolean'
+      }
+    },
+    borderBottomRounded: {
+      control: {
+        type: 'boolean'
+      }
+    }
   },
 };
 
