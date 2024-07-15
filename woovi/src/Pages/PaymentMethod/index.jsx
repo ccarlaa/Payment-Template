@@ -1,18 +1,39 @@
-import React, { useContext } from "react"
-import { PaymentContext } from "../../Context"
+import React, { useContext, useState } from "react"
 import CardSelect from "../../Components/CardSelect";
+import Layout from "../../Components/Layout";
+import { PaymentContext } from "../../Context";
 
 const PaymentMethodPage = () => {
-    const { counter, setCounter} = useContext(PaymentContext)
+    const {selected, setSelected, payments} = useContext(PaymentContext)
     return (
-        <div className="">
-            <button onClick={() => setCounter(counter - 1)}>-</button>
-                {counter}
-
-            <button onClick={() => setCounter(counter + 1)}>+</button>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            <CardSelect />
-        </div>
+        <Layout title="João, como você quer pagar?">
+            <div className="relative">
+                <CardSelect onClick={() => setSelected(0)} selected={selected == 0 ? true : false} variant="tertiary" infos={payments[0]} borderBottomRounded={true} borderTopRounded={true}/>
+                <div className="absolute -top-3 px-4 bg-gray-100 rounded-full left-5">
+                    <p className="text-gray-400 font-extrabold text-md text-center">Pix</p>
+                </div>
+            </div>
+            <div className="relative">
+                <div className="absolute -top-3 px-4 bg-gray-100 rounded-full left-5">
+                    <p className="text-gray-400 font-extrabold text-md text-center">Pix Parcelado</p>
+                </div>
+                {payments.map((infos, index) => {
+                    if(index == 0) {
+                        return
+                    }
+                    if(infos.interest != 0) {
+                        return (
+                            <CardSelect selected={selected == index ? true : false} onClick={() => setSelected(index)} infos={infos} variant="secondary" borderTopRounded={index == 0 ? true : false} />
+                        )
+                    }
+                    else {
+                        return (
+                            <CardSelect selected={selected == index ? true : false} onClick={() => setSelected(index)} infos={infos} variant="primary"  borderTopRounded={index == 1 ? true : false} borderBottomRounded={index == payments.length - 1 ? true : false}/>
+                        )
+                    }
+                })}
+            </div>
+        </Layout>
     )
 }
 

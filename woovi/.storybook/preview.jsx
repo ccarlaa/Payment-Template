@@ -1,5 +1,5 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import { lightTheme } from "../src/themes/index.theme";
+import { lightTheme } from "../src/Themes/index.theme";
 import '../src/GlobalStyle/index.css'
 
 /** @type {import('tailwindcss').Config} */
