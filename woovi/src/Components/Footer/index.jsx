@@ -1,6 +1,6 @@
 import React from "react"
 import GppMaybeOutlinedIcon from '@mui/icons-material/GppMaybeOutlined';
-import GrayLogo from "../../assets/gray_logo.svg"
+import GrayLogo from "../../assets/gray_logo.png"
 
 const Footer = () => {
     return (
