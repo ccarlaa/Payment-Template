@@ -7,7 +7,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { formattedValue } from "../../Utils";
 
 const StepperComponent = ({variant = "primary", payment}) => {
-    const auxArray = Array.from({ length: payment.installmentsNumber - 1});
+    const auxArray = Array.from({ length: 2});
 
     return (
         <Stepper className='w-full' orientation="vertical">
@@ -30,7 +30,7 @@ const StepperComponent = ({variant = "primary", payment}) => {
                         sx={{ padding: 0 }}>
                             <div className='flex justify-between w-full'>
                                 <p className='text-gray-400 text-md font-semibold'>{index > 0  ? `${index + 1}ª no cartão` : `${index + 1}ª entrada no Pix`}</p>
-                                <p className='text-gray-400 text-md font-extrabold'>{formattedValue(payment.installmentsValue)}</p>
+                                <p className='text-gray-400 text-md font-extrabold'>{index > 0 ? formattedValue(payment.installmentsValue * (payment.installmentsNumber - 1)) : formattedValue(payment.installmentsValue)}</p>
                             </div>
                         </StepLabel>
                     </Step>
