@@ -3,6 +3,8 @@ import AccordionComponent from ".";
 export default {
   title: 'AccordionComponent',
   component: AccordionComponent,
+  tags: ['autodocs'],
+
 };
 
 const Template = (args) => <AccordionComponent {...args} />;

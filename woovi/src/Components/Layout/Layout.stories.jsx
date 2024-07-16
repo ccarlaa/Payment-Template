@@ -3,6 +3,8 @@ import Layout from ".";
 export default {
   title: 'Layout',
   component: Layout,
+  tags: ['autodocs'],
+
 };
 
 const Template = (args) => <Layout {...args}>Corpo da página</Layout>;

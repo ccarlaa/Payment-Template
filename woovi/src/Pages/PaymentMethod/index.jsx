@@ -27,12 +27,12 @@ const PaymentMethodPage = () => {
                     }
                     if(infos.interest != 0) {
                         return (
-                            <CardSelect selected={selected == index ? true : false} onClick={() => setSelected(index)} infos={infos} variant="secondary" borderTopRounded={index == 0 ? true : false} />
+                            <CardSelect key={index} selected={selected == index ? true : false} onClick={() => setSelected(index)} infos={infos} variant="secondary" borderTopRounded={index == 0 ? true : false} />
                         )
                     }
                     else {
                         return (
-                            <CardSelect selected={selected == index ? true : false} onClick={() => setSelected(index)} infos={infos} variant="primary"  borderTopRounded={index == 1 ? true : false} borderBottomRounded={index == payments.length - 1 ? true : false}/>
+                            <CardSelect key={index} selected={selected == index ? true : false} onClick={() => setSelected(index)} infos={infos} variant="primary"  borderTopRounded={index == 1 ? true : false} borderBottomRounded={index == payments.length - 1 ? true : false}/>
                         )
                     }
                 })}

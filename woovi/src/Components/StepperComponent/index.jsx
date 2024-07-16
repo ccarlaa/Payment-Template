@@ -7,7 +7,6 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { formattedValue } from "../../Utils";
 
 const StepperComponent = ({variant = "primary", payment}) => {
-    console.log(payment)
     const auxArray = Array.from({ length: payment.installmentsNumber - 1});
 
     return (
@@ -41,4 +40,4 @@ const StepperComponent = ({variant = "primary", payment}) => {
     )
 }
 
-export default StepperComponent
+export default StepperComponent;

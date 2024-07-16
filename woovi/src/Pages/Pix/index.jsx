@@ -9,15 +9,6 @@ import { useNavigate } from "react-router-dom";
 import AccordionComponent from '../../Components/AccordionComponent';
 import StepperComponent from '../../Components/StepperComponent';
 
-const steps = [
-    {
-      label: '1ª entrada no Pix',
-    },
-    {
-      label: '2ª no cartão',
-    },
-  ];
-
 export default function PixPage() {
     const {selected, payments} = useContext(PaymentContext)
     const navigate = useNavigate();
