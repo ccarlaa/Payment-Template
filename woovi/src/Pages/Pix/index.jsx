@@ -5,23 +5,25 @@ import { formattedValue } from '../../Utils';
 import QRCode from '../../assets/qrcode.svg'
 import Button from '@mui/material/Button';
 import CopyAllIcon from '@mui/icons-material/CopyAll';
-import Stepper from '@mui/material/Stepper';
-import Step from '@mui/material/Step';
-import StepLabel from '@mui/material/StepLabel';
-import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useNavigate } from "react-router-dom";
+import AccordionComponent from '../../Components/AccordionComponent';
+import StepperComponent from '../../Components/StepperComponent';
+
+const steps = [
+    {
+      label: '1ª entrada no Pix',
+    },
+    {
+      label: '2ª no cartão',
+    },
+  ];
 
 export default function PixPage() {
     const {selected, payments} = useContext(PaymentContext)
     const navigate = useNavigate();
-    const auxArray = Array.from({ length: payments[selected].installmentsNumber });
 
     return (
-        <Layout title={`João, pague a entrada de ${formattedValue(payments[selected].installmentsValue)} pelo Pix`} >
+        <Layout title={`João, pague a entrada de ${formattedValue(payments[selected].installmentsValue / 2)} pelo Pix`} >
             <div className='flex flex-col gap-5 items-center w-full'>
                 <div className='w-80 h-80 border-2 border-primary-200 p-2 rounded-lg'>
                     <img src={QRCode} alt="QRCode" />
@@ -31,48 +33,15 @@ export default function PixPage() {
                     <p className='font-semibold text-gray-200 text-sm text-center'>Prazo de pagamento:</p>
                     <p className='font-extrabold text-gray-400 text-sm text-center'>15/12/2021 - 08:17</p>
                 </div>
-                <Stepper className='w-full' orientation="vertical">
-                    {auxArray.map((_, index) => {
-                        return (
-                            <Step activeStep={0} key={index}>
-                                <StepLabel StepIconComponent={() => <RadioButtonUncheckedIcon color={index == 0 ? "primary" : "gray"}/>} sx={{padding: 0}}>
-                                    <div className='flex justify-between w-full'>
-                                        <p className='text-gray-400 text-md font-semibold'>{index > 0  ? `${index + 1}ª no cartão` : `${index + 1}ª entrada no Pix`}</p>
-                                        <p className='text-gray-400 text-md font-extrabold'>{formattedValue(payments[selected].installmentsValue)}</p>
-                                    </div>
-                                </StepLabel>
-                            </Step>
-                        )
-                    })}
-                </Stepper>
+                <StepperComponent variant='primary' payment={payments[selected]}/>
                 <div className='w-full h-[2px] bg-gray-100' />
                 <div className='flex justify-between w-full'>
                     <p className='text-gray-400 text-sm font-semibold'>CET: 0,5%</p>
-                    <p className='text-gray-400 text-md font-semibold'>Total: {formattedValue(payments[selected].installmentsValue * payments[selected].installmentsNumber)}</p>
+                    <p className='text-gray-400 text-md font-semibold'>Total: {formattedValue(payments[selected].installmentsValue)}</p>
                 </div>
                 <div className='flex flex-col w-full'>
                     <div className='w-full h-[2px] bg-gray-100 mb-2' />
-                    <Accordion 
-                        className='w-full' 
-                        sx={{ 
-                            '&:before': {
-                                display: 'none',
-                            },
-                            boxShadow: 'none',
-                            border: 'none',
-                        }}> 
-                        <AccordionSummary
-                            expandIcon={<ExpandMoreIcon/>}
-                            aria-controls="panel1-content"
-                            id="panel1-header"
-                            sx={{padding: 0}}
-                            >
-                            <p className='text-gray-400 font-extrabold text-sm'>Como funciona?</p>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <p className='text-gray-400 font-normal text-sm'>Informações do PIX</p>
-                        </AccordionDetails>
-                    </Accordion>
+                    <AccordionComponent label="Como funciona" text='Descrição' />
                     <div className='w-full h-[2px] bg-gray-100 mt-2' />
                 </div>
                 <div className='flex flex-col items-center'>

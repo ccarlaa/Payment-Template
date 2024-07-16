@@ -27,7 +27,7 @@ const CardSelect = ({
 
     const DefineTextFlag = () => {
         if(variant == "secondary") {
-            return {text: "Melhor opção de parcelamento", boldText: `-${interest}% de juros`}
+            return {text: "Melhor opção de parcelamento", boldText: `-${interest}% de juros:`}
         }
         else {
             return {text: "de volta no seu Pix na fon", boldText: `🤑 ${formattedValue(installmentsValue * cashback / 100)}`}

@@ -16,5 +16,12 @@ export const lightTheme = createTheme ({
             },
           },
         },
+        MuiTextField: {
+          styleOverrides: {
+            root: {
+              borderRadius: '8px',
+            },
+          },
+        },
       },
 })
