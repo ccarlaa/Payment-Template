@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Layout from '../../Components/Layout';
 import { PaymentContext } from '../../Context';
 import { formattedValue } from '../../Utils';
-import QRCode from '../../assets/qrcode.svg'
+import QRCode from '../../assets/qrcode.png'
 import Button from '@mui/material/Button';
 import CopyAllIcon from '@mui/icons-material/CopyAll';
 import { useNavigate } from "react-router-dom";
