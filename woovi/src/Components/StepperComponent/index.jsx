@@ -13,7 +13,7 @@ const StepperComponent = ({variant = "primary", payment}) => {
         <Stepper className='w-full' orientation="vertical">
             {auxArray.map((_, index) => {
                 return (
-                    <Step activeStep={0} key={index}>
+                    <Step key={index}>
                         <StepLabel
                         StepIconComponent={() => {
                             return (
